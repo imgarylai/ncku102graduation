@@ -2,7 +2,7 @@
 	Resize Header
 */
 
-$(window).load(function(){
+$(document).ready(function(){
 	
 	var theWindow = $(window);
 	

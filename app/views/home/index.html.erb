@@ -1,17 +1,18 @@
 <%= image_tag("header.png", :id => "bg" )%>
-<div id="header">
-	<div class="container">
-		<div class="inner-header sixteen columns fixed">
-			<h1>畢業倒數</h1>
-			<div id="countdown"></div>
-		</div>
-	</div>
+<div id="header" class="hidden-phone">
+  
 </div>
-<nav class="clearfix">  
+<div id="countdown" class="hidden-phone">
+  <div class="container">
+    畢業倒數
+    <span data-time="1370048400" class="kkcount-down"></span>
+  </div>
+</div>  
+<nav class="clearfix nav">  
     <ul class="clearfix">  
-        <li><a href="#">a</a></li>  
-        <li><a href="#">b</a></li>  
-        <li><a href="#">c</a></li>  
+        <li><a href="#">畢業生專區</a></li>  
+        <li><a href="#">家長專區</a></li>  
+        <li><a href="#">畢業特輯</a></li>  
         <li><a href="#">d</a></li>  
         <li><a href="#">e</a></li>  
         <li><a href="#">f</a></li>    
@@ -22,11 +23,118 @@
 <section>
 	<div class="container">
 		<div class="sixteen columns">
-			<h1>Constructing</h1>
+			<h2>家長專區</h2>
 			<hr />
-			<% (1..200).each do |i| %>
-				<%= image_tag("constructing.gif")%>
-			<% end %>
-		</div>
+    </div>
+    <div class="eight columns">
+    <h3>國立成功大學102級畢業典禮</h3>
+    <p>時間：</p>
+    <p>102年6月1日(六)</p>
+    <p>傍晚18:00-20:00</p>
+    <p>地點：<p>
+    </p>國立成功大學光復校區 光復操場 (台南市東區大學路1號)</p>
+    </div>
+    <div class="eight columns">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>時間</th>
+            <th>內容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>17:00 - 17:20</td>
+            <td>觀禮家屬入場</td>
+          </tr>
+          <tr>
+            <td>17:20 - 17:50</td>
+            <td>畢業生入場</td>
+          </tr>
+          <tr>
+            <td>17:50 - 18:00</td>
+            <td>師長及貴賓入席</td>
+          </tr>
+          <tr>
+            <td rowspan="9">18:00 - 19:30</td>
+            <td>畢業典禮開始</td>
+          </tr>
+          <tr>
+            <td>唱國歌</td>
+          </tr>
+          <tr>
+            <td>主席及來賓致詞</td>
+          </tr>
+          <tr>
+            <td>畢業生代表致詞</td>
+          </tr>
+          <tr>
+            <td>學位授予儀式</td>
+          </tr>
+          <tr>
+            <td>謝恩禮</td>
+          </tr>
+          <tr>
+            <td>唱校歌</td>
+          </tr>
+          <tr>
+            <td>畢業微電影</td>
+          </tr>
+          <tr>
+            <td>特別活動</td>
+          </tr>
+          <tr>
+            <td>19:30 - </td>
+            <td>禮成</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 	</div><!-- container -->
 </section>
+<section>
+  <div class="container">
+    <div class="sixteen columns">
+      <h2>會場圖</h2>
+      <hr />
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="sixteen columns">
+      <h2>注意事項</h2>
+      <hr />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sixteen columns">
+      <h2>交通資訊</h2>
+      <hr />
+    </div>
+    <div class="five columns">
+      <%= image_tag("car.png") %>
+      <p>南下：</p>
+      <p>沿國道一號南下 → 下永康交流道右轉 → 沿中正北路、中正南路(南向)往台南市區直行 → 中華路左轉 → 沿中華東路前進 → 於小東路口右轉，直走即可抵達本校。【自國道三號南下者，轉國道8號（西向），可接國道一號（南向）】</p>
+      <p>北上：</p>
+      <p>沿國道一號北上 → 下仁德交流道左轉 → 沿東門路(西向)往台南市區直走 → 遇林森路或長榮路右轉(北向)，即可抵達本校。【自國道三號北上者，轉86號快速道路（西向），可接國道一號（北向）】</p>
+    </div>
+    <div class="five columns">
+      <%= image_tag("train.png") %>
+      <p>於台南站下車後，自後站出口（大學路），大學路左側即為本校光復校區。</p>
+    </div>
+    <div class="five columns">
+      <%= image_tag("thsr.png") %>
+      <p>搭乘台灣高鐵抵台南站者，可至高鐵台南站二樓轉乘通廊或一樓大廳1號出口前往台鐵沙崙站搭乘台鐵區間車前往台南火車站，約30分鐘一班車，20分鐘可到達台南火車站；成功大學自台南火車站後站步行即可到達。</p>
+    </div>
+  </div>
+	<!-- <iframe width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.tw/maps?f=q&amp;source=s_q&amp;hl=zh-TW&amp;geocode=&amp;q=%E5%8F%B0%E5%8D%97%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%E5%85%89%E5%BE%A9%E6%A0%A1%E5%8D%80&amp;aq=&amp;sll=22.997301,120.219537&amp;sspn=0.005758,0.009152&amp;brcurrent=3,0x346e7659a92fc333:0x1ce96d435e7ee386,1,0x346e7ccc953ffe13:0xd47f4caaa5dc764e&amp;ie=UTF8&amp;hq=%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%E5%85%89%E5%BE%A9%E6%A0%A1%E5%8D%80&amp;hnear=%E5%8F%B0%E5%8D%97%E5%B8%82&amp;t=m&amp;ll=22.997449,120.216651&amp;spn=0.009481,0.013733&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe> -->
+</section>
+<footer>
+	<div class="container">
+
+	</div>
+</footer>
