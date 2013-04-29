@@ -1,7 +1,6 @@
 /*
 	Resize Background
 */
-
 $(window).load(function() {    
 
 	var theWindow        = $(window),

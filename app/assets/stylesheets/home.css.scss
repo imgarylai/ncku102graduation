@@ -105,29 +105,43 @@ nav li {
 	float: left;  
 }
 
+#top-menu a {
+    display: block;
+    -webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    transition: 1s all ease;
+    border-top: 3px solid darken($redcolor, 10%);
+    text-decoration: none;
+}
+#top-menu li.active a{  
+	border-top: 3px solid white;
+}
 nav a {
 	display: inline-block;
 	width: 100px;
 	text-align: center;
 	text-decoration: none;
 	line-height: 40px;
-	text-shadow: 1px 1px 0px #283744;
+	
 	color: #fff;
 }
 
 nav li a {  
-	border-right: 1px solid darken($redcolor, 10%);  
 	box-sizing:border-box;  
 	-moz-box-sizing:border-box;  
 	-webkit-box-sizing:border-box;  
 }  
 nav li:last-child a {  
-	border-right: 0;  
+	border-right: 0; 
 }
 
 nav a:hover, nav a:active {  
-	background-color: lighten($redcolor,10%);  
+	background-color: lighten($redcolor,30%);
+	text-shadow: 1px 1px 0px darken($bluecolor,10%);
+	height:37px;
+	color: $bluecolor;
 }
 nav a#pull {  
 	display: none;  
+	background-color: darken($redcolor,10%);
 }
