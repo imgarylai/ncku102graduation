@@ -172,7 +172,6 @@ nav li:last-child a {
 }
 
 nav a:hover, nav a:active{  
-	text-shadow: 1px 1px 0px darken($bluecolor,10%);
 	color: $bluecolor;
 }
 nav a:visited{
