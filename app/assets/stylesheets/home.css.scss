@@ -113,6 +113,9 @@ nav li {
     border-top: 3px solid darken($redcolor, 10%);
     text-decoration: none;
 }
+#top-menu li.active a:hover{  
+	border-top: 3px solid white;
+}
 #top-menu li.active a{  
 	border-top: 3px solid white;
 }
@@ -136,9 +139,7 @@ nav li:last-child a {
 }
 
 nav a:hover, nav a:active {  
-	background-color: lighten($redcolor,30%);
 	text-shadow: 1px 1px 0px darken($bluecolor,10%);
-	height:37px;
 	color: $bluecolor;
 }
 nav a#pull {  
