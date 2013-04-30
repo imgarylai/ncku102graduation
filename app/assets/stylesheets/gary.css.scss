@@ -7,14 +7,14 @@
 	z-index:100000;
 	width: 62px;
 	height: 62px;
-	margin: 0 2px;
+	/*margin: 0 2px;*/
 	outline: none;
 	background: transparent url('gary.png') no-repeat top left;
 	text-indent: -9000px;
 }
 @media only screen and (max-width : 320px) {
 	.tt-wrapper{
-		left: 10% ;
+		left: 10%;
 	}
 }  
 .tt-wrapper a span{
