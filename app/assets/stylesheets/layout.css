@@ -44,11 +44,11 @@
 	/* Navigation Bar Responsive Design*/
 	@media screen and (max-width: 600px) {  
 		nav {   
-			height: auto;  
+			height: auto;
 		}  
 		nav ul {  
 			width: 100%;  
-			display: block;  
+			display: block;
 			height: auto;  
 		}  
 		nav li {  
@@ -60,9 +60,10 @@
 			text-align: left;  
 			width: 100%;  
 			text-indent: 25px;  
-		}  
+		}
+
 	}
-	@media only screen and (max-width : 480px) {  
+	@media only screen and (max-width : 600px) {  
 		nav {  
 			border-bottom: 0;  
 		}

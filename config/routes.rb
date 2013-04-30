@@ -1,5 +1,6 @@
 Ncku102graduation::Application.routes.draw do
   get "home/index"
+  match 'map' => 'home#map'
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

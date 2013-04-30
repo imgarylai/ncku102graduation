@@ -47,6 +47,7 @@ body > section, footer {
 }
 section{
 	background:$basecolor;
+	// opacity:0.9;
 }
 footer {
 	background:#000;
@@ -106,12 +107,12 @@ nav li {
 }
 
 #top-menu a {
-    display: block;
-    -webkit-transition: 1s all ease;
-    -moz-transition: 1s all ease;
-    transition: 1s all ease;
-    border-top: 3px solid darken($redcolor, 10%);
-    text-decoration: none;
+  display: block;
+  -webkit-transition: 1s all ease;
+  -moz-transition: 1s all ease;
+  transition: 1s all ease;
+  border-top: 3px solid darken($redcolor, 10%);
+  text-decoration: none;
 }
 #top-menu li.active a:hover{  
 	border-top: 3px solid white;
@@ -125,7 +126,6 @@ nav a {
 	text-align: center;
 	text-decoration: none;
 	line-height: 40px;
-	
 	color: #fff;
 }
 
@@ -138,11 +138,29 @@ nav li:last-child a {
 	border-right: 0; 
 }
 
-nav a:hover, nav a:active {  
+nav a:hover, nav a:active{  
 	text-shadow: 1px 1px 0px darken($bluecolor,10%);
 	color: $bluecolor;
+}
+nav a:visited{
+	color:#fff;
 }
 nav a#pull {  
 	display: none;  
 	background-color: darken($redcolor,10%);
+}
+
+#author{
+	font-size:12px;
+	height:20px;
+}
+#lyric{
+	font-size:12px;
+}
+
+.toggle {	
+	cursor: pointer;
+}
+.map_h {
+
 }
