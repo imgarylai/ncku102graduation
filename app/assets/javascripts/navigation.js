@@ -35,7 +35,7 @@ $(document).ready(function(){
       var target = this.hash,
       $target = $(target);
       $('html, body').stop().animate({
-          'scrollTop': $target.offset().top -40
+          'scrollTop': $target.offset().top - 40
       }, 900, 'swing', function () {
           window.location.hash = target;
       });
@@ -47,7 +47,7 @@ $(document).ready(function() {
 	// Cache selectors
 	var lastId,
 	    topMenu = $("#top-menu"),
-	    topMenuHeight = topMenu.outerHeight()+15,
+	    topMenuHeight = topMenu.outerHeight()+35,
 	    // All list items
 	    menuItems = topMenu.find("a"),
 	    // Anchors corresponding to menu items
@@ -56,17 +56,6 @@ $(document).ready(function() {
 	      if (item.length) { return item; }
 	    });
 
-	// Bind click handler to menu items
-	// so we can get a fancy scroll animation
-	// menuItems.click(function(e){
-	//   var href = $(this).attr("href"),
-	//       offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-	//   $('html, body').stop().animate({ 
-	//       scrollTop: offsetTop
-	//   }, 300);
-	//   e.preventDefault();
-	// });
-	// Bind to scroll
 	$(window).scroll(function(){
 	   // Get container scroll position
 	   var fromTop = $(this).scrollTop()+topMenuHeight;
