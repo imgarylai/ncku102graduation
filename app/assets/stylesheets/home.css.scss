@@ -50,7 +50,13 @@ section{
 	// opacity:0.9;
 }
 footer {
-	background:#000;
+	background:$bluecolor;
+}
+
+footer {
+	p,a,h1,h2,h3,h4,h5,h6{
+		color:$basecolor;	
+	}
 }
 
 .fixed {
