@@ -54,6 +54,7 @@
         // called whenever the page size changes or when the page is first
         // scrolled. For some reason, calling this before the page is first
         // scrolled causes the element to become fixed too late.
+
         function resetScroll() {
             // Set the element to it original positioning.
             target.trigger('preUnfixed.ScrollToFixed');
@@ -69,12 +70,12 @@
 
             // Capture the offset left of the target element.
             offsetLeft = target.offset().left;
-            
+
             // If the offsets option is on, alter the left offset.
             if (base.options.offsets) {
                 offsetLeft += (target.offset().left - target.position().left);
             }
-            
+
             if (originalOffsetLeft == -1) {
                 originalOffsetLeft = offsetLeft;
             }
@@ -83,7 +84,7 @@
 
             // Set that this has been called at least once.
             isReset = true;
-            
+
             if (base.options.bottom != -1) {
                 target.trigger('preFixed.ScrollToFixed');
                 setFixed();
@@ -102,11 +103,13 @@
         }
 
         // Returns whether the target element is fixed or not.
+
         function isFixed() {
             return position === 'fixed';
         }
 
         // Returns whether the target element is absolute or not.
+
         function isAbsolute() {
             return position === 'absolute';
         }
@@ -117,32 +120,35 @@
 
         // Sets the target element to fixed. Also, sets the spacer to fill the
         // void left by the target element.
+
         function setFixed() {
             // Only fix the target element and the spacer if we need to.
             if (!isFixed()) {
                 // Set the spacer to fill the height and width of the target
                 // element, then display it.
                 spacer.css({
-                    'display' : target.css('display'),
-                    'width' : target.outerWidth(true),
-                    'height' : target.outerHeight(true),
-                    'float' : target.css('float')
+                    'display': target.css('display'),
+                    'width': target.outerWidth(true),
+                    'height': target.outerHeight(true),
+                    'float': target.css('float')
                 });
 
                 // Set the target element to fixed and set its width so it does
                 // not fill the rest of the page horizontally. Also, set its top
                 // to the margin top specified in the options.
-                
-                cssOptions={
-                    'position' : 'fixed',
-                    'top' : base.options.bottom == -1?getMarginTop():'',
-                    'bottom' : base.options.bottom == -1?'':base.options.bottom,
-                    'margin-left' : '0px'
+
+                cssOptions = {
+                    'position': 'fixed',
+                    'top': base.options.bottom == -1 ? getMarginTop() : '',
+                    'bottom': base.options.bottom == -1 ? '' : base.options.bottom,
+                    'margin-left': '0px'
                 }
-                if (!base.options.dontSetWidth){ cssOptions['width']=target.width(); };
-                
+                if (!base.options.dontSetWidth) {
+                    cssOptions['width'] = target.width();
+                };
+
                 target.css(cssOptions);
-                
+
                 target.addClass('scroll-to-fixed-fixed');
 
                 if (base.options.className) {
@@ -163,21 +169,24 @@
                 top = top - offsetTop;
             }
 
-            cssOptions={
-              'position' : 'absolute',
-              'top' : top,
-              'left' : left,
-              'margin-left' : '0px',
-              'bottom' : ''
-            }            
-            if (!base.options.dontSetWidth){ cssOptions['width']=target.width(); };
-            
+            cssOptions = {
+                'position': 'absolute',
+                'top': top,
+                'left': left,
+                'margin-left': '0px',
+                'bottom': ''
+            }
+            if (!base.options.dontSetWidth) {
+                cssOptions['width'] = target.width();
+            };
+
             target.css(cssOptions);
 
             position = 'absolute';
         }
 
         // Sets the target element back to unfixed. Also, hides the spacer.
+
         function setUnfixed() {
             // Only unfix the target element and the spacer if we need to.
             if (!isUnfixed()) {
@@ -190,11 +199,11 @@
                 // Remove the style attributes that were added to the target.
                 // This will reverse the target back to the its original style.
                 target.css({
-                    'width' : '',
-                    'position' : originalPosition,
-                    'left' : '',
-                    'top' : originalOffset.top,
-                    'margin-left' : ''
+                    'width': '',
+                    'position': originalPosition,
+                    'left': '',
+                    'top': originalOffset.top,
+                    'margin-left': ''
                 });
 
                 target.removeClass('scroll-to-fixed-fixed');
@@ -209,6 +218,7 @@
 
         // Moves the target element left or right relative to the horizontal
         // scroll position.
+
         function setLeft(x) {
             // Only if the scroll is not what it was last time we did this.
             if (x != lastOffsetLeft) {
@@ -233,6 +243,7 @@
 
         // Checks to see if we need to do something based on new scroll position
         // of the page.
+
         function checkScroll() {
             if (!$.isScrollToFixed(target)) return;
             var wasReset = isReset;
@@ -273,9 +284,9 @@
                         setAbsolute();
                         target.trigger('unfixed.ScrollToFixed');
                     }
-                // If the vertical scroll position, plus the optional margin, would
-                // put the target element above the top of the page, set the target
-                // element to fixed.
+                    // If the vertical scroll position, plus the optional margin, would
+                    // put the target element above the top of the page, set the target
+                    // element to fixed.
                 } else if (y >= offsetTop - getMarginTop()) {
                     if (!isFixed() || !wasReset) {
                         postPosition();
@@ -308,7 +319,7 @@
                         if (isFixed()) {
                             postPosition();
                             target.trigger('preUnfixed.ScrollToFixed');
-                            
+
                             if (originalPosition === 'absolute') {
                                 setAbsolute();
                             } else {
@@ -339,7 +350,7 @@
 
         function postPosition() {
             var position = target.css('position');
-            
+
             if (position == 'absolute') {
                 target.trigger('postAbsolute.ScrollToFixed');
             } else if (position == 'fixed') {
@@ -352,10 +363,10 @@
         var windowResize = function(event) {
             // Check if the element is visible before updating it's position, which
             // improves behavior with responsive designs where this element is hidden.
-            if(target.is(':visible')) {
+            if (target.is(':visible')) {
                 isReset = false;
                 checkScroll();
-			}
+            }
         }
 
         var windowScroll = function(event) {
@@ -376,7 +387,7 @@
                 container.appendChild(el);
 
                 var originalHeight = container.style.height,
-                originalScrollTop = container.scrollTop;
+                    originalScrollTop = container.scrollTop;
 
                 container.style.height = '3000px';
                 container.scrollTop = 500;
@@ -407,8 +418,7 @@
         // and binds to the window scroll and resize events.
         base.init = function() {
             // Capture the options for this plugin.
-            base.options = $
-                    .extend({}, $.ScrollToFixed.defaultOptions, options);
+            base.options = $.extend({}, $.ScrollToFixed.defaultOptions, options);
 
             // Turn off this functionality for devices that do not support it.
             // if (!(base.options && base.options.dontCheckForPositionFixedSupport)) {
@@ -440,7 +450,7 @@
             // When the window scrolls, check to see if we need to fix or unfix
             // the target element.
             $(window).bind('scroll.ScrollToFixed', windowScroll);
-            
+
             if (base.options.preFixed) {
                 target.bind('preFixed.ScrollToFixed', base.options.preFixed);
             }
@@ -483,7 +493,7 @@
 
             target.bind('detach.ScrollToFixed', function(ev) {
                 preventDefault(ev);
-                
+
                 target.trigger('preUnfixed.ScrollToFixed');
                 setUnfixed();
                 target.trigger('unfixed.ScrollToFixed');
@@ -494,7 +504,7 @@
                 target.unbind('.ScrollToFixed');
                 base.$el.removeData('ScrollToFixed');
             });
-            
+
             // Reset everything.
             windowResize();
         };
@@ -505,10 +515,10 @@
 
     // Sets the option defaults.
     $.ScrollToFixed.defaultOptions = {
-        marginTop : 0,
-        limit : 0,
-        bottom : -1,
-        zIndex : 1000
+        marginTop: 0,
+        limit: 0,
+        bottom: -1,
+        zIndex: 1000
     };
 
     // Returns enhanced elements that will fix to the top of the page when the
