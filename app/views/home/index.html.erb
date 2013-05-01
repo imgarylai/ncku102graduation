@@ -135,67 +135,7 @@
         <%= image_tag("train.png") %>
       </div>
       <p>於台南站下車後，自後站出口（大學路），大學路左側即為本校光復校區。</p>
-
     </div>
-    <% thsr1 = [
-      {
-        :type => "區間車",
-        :num =>"3765",
-        :tainan => "19:05",
-        :sl => "19:29",
-        :time => "24分"
-      },
-      {
-        :type => "區間車",
-        :num =>"3767",
-        :tainan => "19:35",
-        :sl => "19:59",
-        :time => "24分"
-      },{
-        :type => "區間車",
-        :num =>"3771",
-        :tainan => "20:05",
-        :sl => "20:29",
-        :time => "24分"
-      },{
-        :type => "區間車",
-        :num =>"3773",
-        :tainan => "20:28",
-        :sl => "20:51",
-        :time => "24分"
-      },{
-        :type => "區間車",
-        :num =>"3775",
-        :tainan => "21:05",
-        :sl => "21:29",
-        :time => "24分"
-      },{
-        :type => "區間車",
-        :num =>"3777",
-        :tainan => "21:20",
-        :sl => "21:44",
-        :time => "24分"
-      },{
-        :type => "區間車",
-        :num =>"3781",
-        :tainan => "21:47",
-        :sl => "22:11",
-        :time => "24分"
-      }
-      ] %>
-      <% thsr =[
-        {
-          :day => "",
-          :num => "",
-          :tainan => "",
-          :chiayi => "",
-          :taichung => "",
-          :hisnchu => "",
-          :taoyuan => "",
-          :panchiao => "",
-          :taipei => ""
-        }
-        ] %>
     <div class="one-third column">
       <div align="center">
         <%= image_tag("thsr.png") %>
@@ -203,6 +143,35 @@
       <p>搭乘台灣高鐵抵台南站者，可至高鐵台南站二樓轉乘通廊或一樓大廳1號出口前往台鐵沙崙站搭乘台鐵區間車前往台南火車站，約30分鐘一班車，20分鐘可到達台南火車站；成功大學自台南火車站後站步行即可到達。</p>
     </div>
     <br class="clear" />
+    <div class="sixteen columns">
+      <h3 id="timetable">時刻表</h3>
+      <hr />
+    </div>
+    <% timetable = [
+      {
+        :type => "沙崙支線時刻表",
+        :img => "thsr_timetable.png"
+      },
+      {
+        :type => "高鐵時刻表",
+        :img => "thsr_timetable2.png"
+      },
+      {
+        :type => "台鐵北上時刻表",
+        :img => "tr_timetable.png"
+      },
+      {
+        :type => "台鐵南下上時刻表",
+        :img => "tr_timetable2.png"
+      }
+      ] %>
+    <% timetable.each do |t| %>
+    <div class="eight columns">
+      <h4><%= t[:type] %></h4>
+      <hr>
+      <%= image_tag(t[:img], :class => "scale-with-grid" ) %>
+    </div>
+    <% end -%>
   </div>
   <div class="visible-desktop">
 	<iframe width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.tw/maps?f=q&amp;source=s_q&amp;hl=zh-TW&amp;geocode=&amp;q=%E5%8F%B0%E5%8D%97%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%E5%85%89%E5%BE%A9%E6%A0%A1%E5%8D%80&amp;aq=&amp;sll=22.997301,120.219537&amp;sspn=0.005758,0.009152&amp;brcurrent=3,0x346e7659a92fc333:0x1ce96d435e7ee386,1,0x346e7ccc953ffe13:0xd47f4caaa5dc764e&amp;ie=UTF8&amp;hq=%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%E5%85%89%E5%BE%A9%E6%A0%A1%E5%8D%80&amp;hnear=%E5%8F%B0%E5%8D%97%E5%B8%82&amp;t=m&amp;ll=22.997449,120.216651&amp;spn=0.009481,0.013733&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe></div>
@@ -281,42 +250,34 @@
       <hr />
     </div>
     <div class="sixteen columns">
-      <p>地點：由往年習慣之 中正堂 移至 光復操場</p>
-      <p>時間：由往年習慣之 上午10-12時 移至 傍晚 17:30 - 19:30</p>
+      <p>地點：光復校區 光復操場</p>
+      <p>時間：傍晚五點半至七點半</p>
       <span class="badge badge-important">Q:</span>
-      <h4>為什麼要變更會場地點，且變更地點為光復操場？</h4>
+      <h4>一、為什麼要變更會場地點，且變更地點為光復操場？</h4>
       <span class="badge badge-success">A:</span>
-      <li>家長座位不足，往年應屆畢業生與家長多有抱怨。</li>
-      <p>往年習慣之會場地點：中正堂可容納六千人，畢業生出席畢業典禮人數約3300名，畢業生家長坐滿中正堂剩餘空間(約2700名)。學校同時於國際會議廳一、二、三講堂及成功廳(約1300名)開放轉播皆擠滿家長，且家長常為辛苦遠從中北部攜家帶眷到校參加畢業典禮，卻只能看電視轉播而對學校安排諸多抱怨。</p>
-      <li>戶外的光復操場可容納典禮人數，且場地較為合適。</li>
+      <h5>1. 家長座位不足，往年應屆畢業生與家長多有抱怨。</h5>
+      <p>往年習慣之會場地點：中正堂可容納六千人，畢業生出席畢業典禮人數約3300名，畢業生家長坐滿中正堂剩餘空間(約2700名)。學校同時於國際會議廳一、二、三講堂及成功廳(約1300名)開放轉播皆擠滿家長，且家長常為辛苦遠從中北部攜家帶眷到校參加畢業典禮，卻只能一名家屬入場觀禮，其餘家屬看電視轉播而對學校安排諸多抱怨。</p>
+
+      <h5>2. 戶外的光復操場可容納典禮人數，且場地較為合適。</h5>
       <p>考量榕園、雲平大道及中正堂皆未能容納此參加人數(畢業生及家長人數約7700名)，故選擇足夠容納此參加人數的光復操場，且場地周圍有圍牆及出入口便於管制，確保典禮順暢進行。</p>
-    </div>
-    <div class="sixteen columns">
       <span class="badge badge-important">Q:</span>
-      <h4>為什麼時間改成晚上六點至八點?</h4>
+      <h4>二、為什麼時間是傍晚時段？</h4>
       <span class="badge badge-success">A:</span>
-      <p>六月份室外白天炎熱，為避免同學及家長參加典禮因氣溫而感到不適，故選擇晚上舉辦。</p>
-    </div>
-    <hr>
-    <div class="sixteen columns">
+      <p>六月份室外白天炎熱，為避免同學及家長參加典禮因氣溫而感到不適或中暑，故選擇下午至傍晚舉辦。</p>
+      <hr>
       <p>因為時間和地點的改變，畢業生可能會擔心一些問題以下提供參考。</p>
       <span class="badge badge-important">Q:</span>
-      <h4>傍晚光線不足，拍照不好看？</h4>
+      <h4>一、傍晚光線不足，拍照問題 </h4>
       <span class="badge badge-success">A:</span>
-      <p>放心 ☺，台灣6月份日落時間大概在為18：40-18：50區間，同學在五點半進場時至六點半的時間，都有白天的日光可以拍照。天色漸暗的時候，光復操場會場內仍架設足夠的燈光打亮，讓同學在夜間的會場內也可以拍下美麗的照片。</p>
-    </div>
-    <div class="sixteen columns">
+      <p>放心 ☺，台灣6月份日落時間大概在為18：40-18：50區間，同學在五點半進場時至六點半的時間，都有白天的日光可以拍照。天色漸暗的時候，光復操場會場內仍架設足夠的燈光打亮，讓同學在夜間的會場內也可以拍下美麗的照片。 </p>
       <span class="badge badge-important">Q:</span>
-      <h4>學生家長南下、北返路程規劃怎麼辦?</h4>
+      <h4>二、學生家長南下、北返路程規劃 </h4>
       <span class="badge badge-success">A:</span>
-      <p>歡迎參考畢業典禮網站「家長專區」台鐵、高鐵搭程資訊(連結)。</p>
-    </div>
-    <div class="sixteen columns">
+      <p> 歡迎參考畢業典禮網站「交通資訊」台鐵、高鐵搭程資訊 <a href="#timetable">(連結)</a>。</p>
       <span class="badge badge-important">Q:</span>
-      <h4>那如果當天下雨怎麼辦？</h4>
+      <h4>三、雨備方案 </h4>
       <span class="badge badge-success">A:</span>
-      <p>將持續關注當周天氣預報，畢業典禮前幾天即會決定是否移至中正堂內舉辦，並公布於學校網站與畢業典禮網站及畢聯會粉絲頁等同學家長可觸及的管道，家長邀請函中亦會說明雨備方案。</p>
-      <p>若下雨移回中正堂舉辦，維持每位畢業生一張邀請函，一張邀請函僅有一名家長入場觀禮。</p>
+      <p>將持續關注當周天氣預報，畢業典禮前三天即會決定是否移至中正堂內舉辦，並公布於學校網站與畢業典禮網站及畢聯會粉絲頁等同學家長可觸及的管道，家長邀請函中亦說明雨備方案：若下雨移回中正堂舉辦，維持每位畢業生一張邀請函，一張邀請函僅有一名家長憑證入場觀禮。 </p>
     </div>
   </div>
 </section>
