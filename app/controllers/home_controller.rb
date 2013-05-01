@@ -3,4 +3,6 @@ class HomeController < ApplicationController
   end
   def map
   end
+  def special
+  end
 end
